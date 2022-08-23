@@ -43,8 +43,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void createNewAccountTest() throws LoginException {
-		AuthenticationRequest request = new AuthenticationRequest("suman","1234");
-		when(userRepository.findByUserName("suman")).thenReturn(Optional.empty());
+		AuthenticationRequest request = new AuthenticationRequest("Snehesh","1234");
+		when(userRepository.findByUserName("Snehesh")).thenReturn(Optional.empty());
 		when(userRepository.saveAndFlush(ArgumentMatchers.any(User.class))).thenReturn(new User());
 		assertNotNull(userService.createNewAccount(request));
 	}
@@ -63,8 +63,8 @@ public class UserServiceTest {
 	
 	@Test(expected = LoginException.class)
 	public void authenticateInvalidUsernameTest() throws LoginException {
-		when(userRepository.findByUserName("suman")).thenReturn(Optional.empty());
-		userService.authenticate("suman","1234");
+		when(userRepository.findByUserName("Snehesh")).thenReturn(Optional.empty());
+		userService.authenticate("Snehesh","1234");
 	}
 	
 }

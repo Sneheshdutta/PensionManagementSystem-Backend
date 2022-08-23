@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.cognizant.pms.processpension.model.Bank;
 
 /**
- * @author Suman Chakraborty
+ * @author Snehesh Dutta
  *
  */
 @Repository

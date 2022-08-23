@@ -70,12 +70,12 @@ public class ProcessPensionServiceTest {
 		when(gpdClient.getPensionerDetails(CommonTestConstants.VALID_JWT_TOKEN, "520552812599"))
 				.thenReturn(new ApiResponsePd(200, "Data fetched",
 						new PensionerDetails(
-								new Pensioner("520552812599", "Suman", new Date(), null, 30000D, 5000D, "SELF", null),
+								new Pensioner("520552812599", "Snehesh", new Date(), null, 30000D, 5000D, "SELF", null),
 								new Bank(null, "SBI", "PUBLIC"))));
 		when(gpdClient.getPensionerDetails(CommonTestConstants.VALID_JWT_TOKEN, "555557777756"))
 		.thenReturn(new ApiResponsePd(200, "Data fetched",
 				new PensionerDetails(
-						new Pensioner("520552812599", "Suman", new Date(), null, 30000D, 5000D, "SELF", null),
+						new Pensioner("520552812599", "Snehesh", new Date(), null, 30000D, 5000D, "SELF", null),
 						new Bank(null, "INVALID", "PUBLIC"))));
 	}
 

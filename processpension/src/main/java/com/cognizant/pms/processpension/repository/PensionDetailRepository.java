@@ -12,7 +12,7 @@ import com.cognizant.pms.processpension.model.PensionDetail;
 
 
 /**
- * @author Suman Chakraborty
+ * @author Snehesh Dutta
  *
  */
 @Repository

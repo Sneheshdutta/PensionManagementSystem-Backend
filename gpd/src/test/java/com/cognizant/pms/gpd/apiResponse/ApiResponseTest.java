@@ -18,11 +18,11 @@ public class ApiResponseTest {
 		        .status(0)
 		        .message(null)
 		        .data(null).build();
-		res.setData("Suman");
+		res.setData("Snehesh");
 		res.setMessage("Msg");
 		res.setStatus(200);
 		assertNotNull(res);
-		assertEquals("Suman", res.getData());
+		assertEquals("Snehesh", res.getData());
 		assertEquals("Msg", res.getMessage());
 		assertEquals(200, res.getStatus());
 		ApiResponse res2 = new ApiResponse();

@@ -43,7 +43,7 @@ public class GetPensionerDetailsServiceTest {
 	@Before
 	public void initialize() throws IOException, ParseException {
 		when(util.getDetailsFromCSV()).thenReturn(Stream
-				.of(new PensionerDetails(new Pensioner("123456789012", "Suman", new Date(), "BZRPC53547", 20000.0D,
+				.of(new PensionerDetails(new Pensioner("123456789012", "Snehesh", new Date(), "BZRPC53547", 20000.0D,
 						1200D, "SELF", "324233454"), new Bank("SBI", "324233454", "PUBLIC")))
 				.collect(Collectors.toList()));
 		when(authClient.validateAuthToken(CommonTestConstants.INVALID_JWT_TOKEN)).thenReturn(new ApiResponse(0,null,false));
@@ -57,7 +57,7 @@ public class GetPensionerDetailsServiceTest {
 
 	@Test
 	public void findPensionDetailsFromCSVTest() {
-		assertEquals("Suman",
+		assertEquals("Snehesh",
 				getPensionerDetailsService.findPensionDetailsFromCSV("123456789012").getPensioner().getName());
 	}
 
