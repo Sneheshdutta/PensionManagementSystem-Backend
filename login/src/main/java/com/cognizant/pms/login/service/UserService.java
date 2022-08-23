@@ -47,14 +47,12 @@ public class UserService {
     }
 
     public boolean authenticate(String username, String password) throws LoginException {
-    	log.info("Entered authenticate() for username:"+username);
         Optional<User> user = userRepository.findByUserName(username);
         if(!user.isPresent()){
         	log.error("Username not found");
             throw new LoginException("Username not found");
         }
         else {
-        	log.info("Exiting authenticate()");
         	return passwordEncoder.matches(password, user.get().getPassword());
         }
     }

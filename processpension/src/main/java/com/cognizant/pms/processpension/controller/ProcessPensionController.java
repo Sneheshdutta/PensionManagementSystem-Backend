@@ -41,8 +41,6 @@ public class ProcessPensionController {
                         .message("Pension Processed successfully")
                         .data(pd)
                         .build());
-        		log.info("response:"+response);
-        		log.info("Exiting proessPension() for input:"+input);
         		return response;
     		}catch(Exception e) {
     			log.error(e.getMessage());
@@ -51,7 +49,6 @@ public class ProcessPensionController {
                         .message(e.getMessage())
                         .data(null)
                         .build());
-    			log.info("response:"+response);
     			return response;
     		}
         }
@@ -68,8 +65,6 @@ public class ProcessPensionController {
 
     @GetMapping("/{aadharNo}")
     public ResponseEntity<ApiResponse> getPensionDetailsOfPensioner(@RequestHeader("Authorization") String authToken, @PathVariable("aadharNo") String aadharNo){
-    	log.info("Entered getPensionDetailsOfPensioner() for aadharNo:"+aadharNo);
-    	log.info("authToken:"+authToken);
         if(service.validateAuth(authToken)) {
         	try {
         		ResponseEntity<ApiResponse> response =   ResponseEntity.ok(ApiResponse.builder()
@@ -87,7 +82,6 @@ public class ProcessPensionController {
                         .message(e.getMessage())
                         .data(null) 
                         .build());
-    			log.info("response:"+response);
     			return response;
         	}
         	
