@@ -35,8 +35,6 @@ public class GetPensionerDetailsController {
                     .message("Details Fetched")
                     .data(service.findPensionDetailsFromCSV(aadharNo))
             .build());
-    		log.info("response:"+response);
-    		log.info("Exiting getPensionerDetails() for aadharNo:"+aadharNo);
     		return response;
         }
     	ResponseEntity<ApiResponse> response = ResponseEntity.ok(ApiResponse.builder()
@@ -44,9 +42,6 @@ public class GetPensionerDetailsController {
                 .message("Incorrect Credentials")
                 .data(null)
                 .build());
-    	log.error("Authentication Failed");
-    	log.info("response:"+response);
-    	log.info("Exiting getPensionerDetails() for aadharNo:"+aadharNo);
     	return response;
     }
 }
